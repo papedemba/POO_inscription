@@ -1,0 +1,42 @@
+MLD
+Heritage
+- singleTable:toutes les classes qui participent à l'Heritage
+ seront dans une meme table
+
+ personne(id,nom_complet,role,login,password,grade,matricule,adresse,sexe)
+ - joined:cree autant de table que de classe mais la cle de la classe 
+    mere migre comme cle etrangere au niveau de la classe fille 
+    personne(id,nom_complet,role)
+    user(login,password,#personne_id)
+    professeur(grade,#personne_id)
+    rp(#personne_id)
+    ac(#personne_id)
+    etudiant(matricule,adresse,sexe,#personne_id)
+    OneToMany-> ManyToOne
+    1->* //OneToMany
+    *->1 // ManyToOne
+    MLD => cle du faible qui migre au niveau du fort
+    annee_scolaire(id,libelle)
+    inscription(#annee_id,ac_id,annee_id,etudiant_id,classe_id,)
+    ManyToOne->ManyToOne => 
+    classe(id,libelle,niveau,filiere)
+    professeur_classe(#classe_id,personne_id)
+
+    --type de requet
+    requet de mise a jour
+    // retourne toujour un entier=>nbre de ligne modifie dans la table 
+
+    insert()
+    updater()
+    delete()
+    // retourne des donnees :object,tableau
+    select()
+
+    les requtes sql
+    
+
+
+    
+    
+
+    
