@@ -5,6 +5,10 @@ class Inscription{
     // les fonctions navigationnelles
 
 // ManyToOne
+
+public function inscrire(){
+    
+}
 public function ac():AC{
 $sql="select p*from inscription i personne p where p.id=i.ac_id 
 and p.role like 'ROLE_AC'

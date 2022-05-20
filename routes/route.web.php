@@ -18,6 +18,7 @@ $router->route('/personne',[PersonneController::class,"lister"]);
 $router->route('/lister-professeur',[ProfesseurController::class,"listerProfesseur"]);
 $router->route('/lister-module',[ModuleController::class,"listerModule"]);
 $router->route('/lister-demande',[DemandeController::class,"listerDemande"]);
+$router->route('/inscrire',[InscriptionController::class,"Inscription"]);
 
 
 

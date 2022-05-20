@@ -10,10 +10,11 @@ class Controller  {
         $this->request=$request;
     }
     public function render(string $path,array $data=[]){
-        
-        $data["Constantes"]=Constantes::class;
+        $yobale = [];
+        $yobale["Constantes"]=Constantes::class;
 
-        $data["request"]=$this->request;
+        $yobale["request"]=$this->request;
+        extract($yobale);
         ob_start();
         extract($data);
         //dd(Constantes::ROOT()."templates/".$path);

@@ -9,7 +9,7 @@ class ProfesseurController extends Controller{
     }
     public function listerProfesseur(){
         if($this->request->isGet()){
-            $prof=new Professeur; 
+            $professeurs=new Professeur; 
            
             $professeurs = Professeur::findAll();  
 

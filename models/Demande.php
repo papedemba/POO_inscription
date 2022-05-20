@@ -3,6 +3,11 @@ namespace App\Model;
 use App\Core\Model;
 
 class Demande extends Model{
+
+public function AjouterDemande(){
+    
+}
+
     public static function findAll():array{
         $db=self::database();
         $db->connexionBD();

@@ -51,7 +51,7 @@
         $db->closeConnexio();
         return $result;
     }
-    public static function findBy(string $sql,array $data=null,$single=false):object|null|array{
+    public static function findBy(string $sql,array $data=[],$single=false):object|null|array{
         $db=self::database();
         // dd($sql);
         $db->connexionBD();
@@ -60,6 +60,13 @@
         return $result;
         
     }
+    public static function updateBy(string $sql,array $data=[]):int{
 
+        $db=self::database();
+        $db->connexionBD();
+        $result=$db->executeUpdate($sql,$data);
+        $db->closeConnexio();
+        return 0;
+    }
  }
  

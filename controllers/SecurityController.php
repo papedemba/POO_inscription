@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Core\Controller;
+use App\Model\User;
 
 class SecurityController extends Controller{
    
@@ -9,6 +10,21 @@ class SecurityController extends Controller{
         if($this->request->isGet()){
                
             $this->render('security/login.html.php');
+
+        }
+        if($this->request->isPost()){
+            $kouconnect=User::findUserByLoginAndPassword($_POST['login'],$_POST['password']);
+            // dd($kouconnect);
+            if($kouconnect==null){
+                $this->render('security/login.html.php');
+
+            }else{
+                // $this->render('professeur/listerProfesseur.html.php');
+                // $this->redirecToRoute("lister-professeur");
+                $this->render('accueil/accueil.html.php');
+            }
+               
+            
 
         }
 
