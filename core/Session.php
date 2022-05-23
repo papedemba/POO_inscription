@@ -17,4 +17,7 @@ class Session{
     public function get(string $key){
        return $_SESSION[$key];
     }
+    public function getUser(){
+        return $this->user;
+     }
 }

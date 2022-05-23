@@ -1,11 +1,17 @@
 <?php 
 //  require_once('public/layout/base.html.php');
     use App\Core\Constantes;
+    use App\Core\Role;
+    session_start();
+
 ?> 
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
 <link rel="stylesheet" href="<?=Constantes::WEB_ROOT.'bootstrap-5.1.3/dist/css/bootstrap.min.css'?>">
 <!-- Example single danger button -->
 <!-- Example single danger button -->
+<?php  if(isset($_SESSION['user'])): ?>
+
+<?php $role=new Role(); if($role::isRP()):  ?>
 <div class="btn-group">
   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Professeur
@@ -26,15 +32,6 @@
   </ul>
 </div>
 <div class="btn-group">
-  <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Demande
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'lister-demande'?>">Liste Demande</a></li>
-    
-  </ul>
-</div>
-<div class="btn-group">
   <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Module
   </button>
@@ -45,6 +42,22 @@
   </ul>
 
 </div>
+<?php  endif ?>
+
+<?php  $role=new Role(); if($role::isEtudinat()):   ?>
+<div class="btn-group">
+  <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Demande
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'lister-demande'?>">Liste Demande</a></li>
+    <li><a class="dropdown-item" href="">formuler demande</a></li>
+    
+  </ul>
+</div>
+<?php endif; ?>
+<?php  $role=new Role(); if($role::isAC()):   ?>
+
 <div class="btn-group">
   <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Inscription
@@ -56,4 +69,7 @@
   </ul>
 
 </div>
+<?php  endif ?>
+<?php  endif ?>
 <?=$content_for_views?>
+

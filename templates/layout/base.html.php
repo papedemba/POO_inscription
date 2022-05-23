@@ -25,7 +25,7 @@ use App\Core\Constantes;
         </li>
         
         <li class="nav-item">
-            <a class="nav-link " href="<?=$Constantes::WEB_ROOT.'templates/accueil/accueil.html.php'?>">Deconnexion</a>
+            <a class="nav-link " href="<?=$Constantes::WEB_ROOT.'login'?>">Deconnexion</a>
         </li>
     </ul>
         </div>

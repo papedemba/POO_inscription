@@ -64,13 +64,13 @@ public static function findAll():array{
         
         return parent::findBy($sql,[get_called_class()::$role]);
     }
-    // public function insert():int{
-    //     $db=parent::database();
-    //     $db->connexionBD();
-    //     $sql="INSERT INTO `personne` (`nomc_omplet`,`role`,`login`,'password') VALUES (?,?,?,?);";
-    //     $result=$db->executeUpdate($sql,[$this->nomComplet,self::$role,$this->login,$this->password]);
-    //     $db->closeConnexio();
-    //     echo $sql;
-    //     return $result;
-    // }
+    public function insert():int{
+        $db=parent::database();
+        $db->connexionBD();
+        $sql="INSERT INTO personne (`nomc_omplet`,`role`,`login`,`password`) VALUES (?,?,?,?);";
+        $result=$db->executeUpdate($sql,[$this->nomComplet,self::$role,$this->login,$this->password]);
+        $db->closeConnexio();
+
+        return $result;
+    }
 }

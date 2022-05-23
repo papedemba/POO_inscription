@@ -24,15 +24,15 @@ public static function findAll():array{
     $db->closeConnexio();
     return $result;
 }
- public function insert():int{
-    $db=parent::database();
-    $db->connexionBD();
-    $sql="INSERT INTO `personne` (`nomc_omplet`,`role`,`grade`) VALUES (?,?,?);";
-    $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->grade]);
-    $db->closeConnexio();
-    echo $sql;
-    return $result;
-}
+//  public function insert():int{
+//     $db=parent::database();
+//     $db->connexionBD();
+//     $sql="INSERT INTO `personne` (`nomc_omplet`,`role`,`grade`) VALUES (?,?,?);";
+//     $result=$db->executeUpdate($sql,[$this->nomComplet,parent::$role,$this->grade]);
+//     $db->closeConnexio();
+//     echo $sql;
+//     return $result;
+// }
 
     /**
      * Get the value of grade

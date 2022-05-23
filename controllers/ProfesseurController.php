@@ -4,7 +4,12 @@ use App\Core\Controller;
 use App\Model\Professeur;
 class ProfesseurController extends Controller{
 
-    public function affecterClasse(){
+    public function ajouterProf(){
+        if($this->request->isGet()){
+             
+
+            $this->render('professeur/ajoutProf.html.php');
+        }
 
     }
     public function listerProfesseur(){

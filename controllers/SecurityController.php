@@ -19,6 +19,8 @@ class SecurityController extends Controller{
                 $this->render('security/login.html.php');
 
             }else{
+                session_start();
+                $_SESSION['user']=$kouconnect;
                 // $this->render('professeur/listerProfesseur.html.php');
                 // $this->redirecToRoute("lister-professeur");
                 $this->render('accueil/accueil.html.php');
