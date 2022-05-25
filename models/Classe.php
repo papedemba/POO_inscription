@@ -8,9 +8,12 @@ class Classe extends Model{
         private string $filiere;
         private string $niveau;
 
-    public function __construct()
+    public function __construct(?string $libelle='',?string $filiere='',?string $niveau='')
     {
-        
+            $this->libelle=$libelle;
+            $this->filiere=$filiere;
+            $this->niveau=$niveau;
+    
     }
     
     
@@ -26,14 +29,29 @@ public function professeurs():array{
 
 public static function findAll():array{
     
-    $sql="select *from ".self::table();
+    $sql="select *from ".self::table()." where etat like '0' ";
    
     return self::findBy($sql);
 }
 public function insert():int{
-    $sql="INSERT INTO classe (`libelle`,`filiere`,`niveau`) VALUES (?,?,?);";
+        $db=self::database();
+        $db->connexionBD();
+        $sql="INSERT INTO classe (`libelle`,`filiere`,`niveau`) VALUES (?,?,?);";
+        $result=$db->executeUpdate($sql,[$this->libelle,$this->filiere,$this->niveau]);
+        $db->closeConnexio();
+        return $result;
 
-    return self::updateby($sql);
+   
+    //return self::updateby($sql);
+}
+public  function update(int $id):int{
+        $db=self::database();
+        $db->connexionBD();
+        $sql="UPDATE ".self::table()." set etat='1' where id=? ";
+        $result=$db->executeUpdate($sql,[$id]);
+        $db->closeConnexio();
+        
+        return $result;
 }
 
         /**

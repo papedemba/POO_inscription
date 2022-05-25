@@ -1,6 +1,8 @@
 <?php
 namespace App\Core;
 
+use Digia\InstanceFactory\InstanceFactory;
+
 class Controller  {
 
     protected Request $Request;
@@ -23,10 +25,14 @@ class Controller  {
         $content_for_views=ob_get_clean();
         // var_dump(Constantes::ROOT());die;
         require_once(Constantes::ROOT()."templates/layout/base.html.php");
+        require_once(Constantes::ROOT()."templates/accueil/accueil.html.php");
         //templates/professeur/listerProfesseur.html.php"
     }
     public function redirecToRoute($uri){
         header("location:".Constantes::WEB_ROOT.$uri);
+    }
+    public function instance(string $class,array $data){
+        return $classe = \Digia\InstanceFactory\InstanceFactory::fromProperties($class,$data);
     }
 
 }

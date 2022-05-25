@@ -1,4 +1,8 @@
 <?php
+
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(E_ALL);
 require_once("../vendor/autoload.php");
 require_once("../core/fonctions.php");
 require_once("../routes/route.web.php");
@@ -9,6 +13,7 @@ use App\Model\Etudiant;
 use App\Model\User;
 use App\Model\Classe;
 use App\Model\Module;
+
 
 
 /* // inclure les fichier
@@ -55,6 +60,16 @@ echo $ac->getRole();   */
 //  var_dump($acs);
 //  echo "</pre>";
 //  die;
+// $etu=new Etudiant();
+
+// $etu->setNomComplet('Sokhna Dieng');
+// $etu->setLogin('Sokhna123@gmail.com');
+// $etu->setPassword('Sokhna145');
+// $etu->setMatricule('Sokhna201708');
+// $etu->setAdresse('Dialegne');
+// $etu->setSexe('F');
+
+// $etu->insert();
 
 
 

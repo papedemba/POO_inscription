@@ -21,6 +21,8 @@ $router->route('/add-prof',[ProfesseurController::class,"ajouterProf"]);
 $router->route('/lister-module',[ModuleController::class,"listerModule"]);
 $router->route('/lister-demande',[DemandeController::class,"listerDemande"]);
 $router->route('/inscrire',[InscriptionController::class,"Inscription"]);
+$router->route('/delete-classe',[ClasseController::class,"deleteClasse"]);
+
 
 
 

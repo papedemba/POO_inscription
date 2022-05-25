@@ -20,6 +20,7 @@ class SecurityController extends Controller{
 
             }else{
                 session_start();
+                //dd($_SESSION);
                 $_SESSION['user']=$kouconnect;
                 // $this->render('professeur/listerProfesseur.html.php');
                 // $this->redirecToRoute("lister-professeur");

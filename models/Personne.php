@@ -6,7 +6,7 @@ use App\Core\Model;
     // les attributs instance
     protected int $id;
     protected string $nomComplet;
-    protected static string $role="";
+    protected static string $role;
     // les attributs classe ou static
     private static int $nbrePersonne;
     

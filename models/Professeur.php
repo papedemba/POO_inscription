@@ -19,7 +19,7 @@ public function classes():array{
 public static function findAll():array{
     $db=self::database();
     $db->connexionBD();
-    $sql="select *from ".self::table()." where role like 'ROLE_PROFESSEUR'";
+    $sql="select *from ".self::table()." where role like 'ROLE_PROFESSEUR' and etat like '0'";
     $result=$db->executeSelect($sql);
     $db->closeConnexio();
     return $result;

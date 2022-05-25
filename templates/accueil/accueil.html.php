@@ -1,8 +1,8 @@
 <?php 
 //  require_once('public/layout/base.html.php');
-    use App\Core\Constantes;
-    use App\Core\Role;
-    session_start();
+     use App\Core\Constantes;
+     use App\Core\Role;
+    //session_start();
 
 ?> 
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
@@ -13,7 +13,7 @@
 
 <?php $role=new Role(); if($role::isRP()):  ?>
 <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Professeur
   </button>
   <ul class="dropdown-menu">
@@ -23,7 +23,7 @@
   </ul>
 </div>
 <div class="btn-group">
-  <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Classe
   </button>
   <ul class="dropdown-menu">
@@ -32,12 +32,13 @@
   </ul>
 </div>
 <div class="btn-group">
-  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Module
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Ajout Module</a></li>
-    <li><a class="dropdown-item" href="#"></a>Creer Module</li>
+    
+    <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'lister-module'?>">Lister Module</a></li>
     
   </ul>
 
@@ -71,5 +72,5 @@
 </div>
 <?php  endif ?>
 <?php  endif ?>
-<?=$content_for_views?>
+
 

@@ -9,15 +9,17 @@
                 alt="Sample photo" class="img-fluid"
                 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
             </div>
+            
             <div class="col-xl-6">
               <div class="card-body p-md-5 text-black">
+                <form action="" method="post">
                 <h3 class="mb-5 text-uppercase">INSCRIPTION POUR ETUDIANT</h3>
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                  <input type="text" id="form3Example8" name="matricule" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example8">Matricule</label>
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                  <input type="text" id="form3Example8" name="nomc_omplet" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example8">Nom Complet</label>
                 </div>
 
@@ -25,7 +27,7 @@
          
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                  <input type="text" id="form3Example8" name="adresse" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example8">Address</label>
                 </div>
 
@@ -34,20 +36,20 @@
                   <h6 class="mb-0 me-4">Gender: </h6>
 
                   <div class="form-check form-check-inline mb-0 me-4">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                      value="option1" />
+                    <input class="form-check-input" type="radio" name="sexe" id="femaleGender"
+                      value="female" />
                     <label class="form-check-label" for="femaleGender">Female</label>
                   </div>
 
                   <div class="form-check form-check-inline mb-0 me-4">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                      value="option2" />
+                    <input class="form-check-input" type="radio" name="sexe" id="maleGender"
+                      value="male" />
                     <label class="form-check-label" for="maleGender">Male</label>
                   </div>
 
                   <div class="form-check form-check-inline mb-0">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                      value="option3" />
+                    <input class="form-check-input" type="radio" name="sexe" id="otherGender"
+                      value="other" />
                     <label class="form-check-label" for="otherGender">Other</label>
                   </div>
 
@@ -55,20 +57,20 @@
 
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example97" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example97">Login</label>
+                  <input type="text" id="form3Example97" name="login" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example97" >Login</label>
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                  <input type="text" id="form3Example97" name="password" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example97">Password</label>
                 </div>
 
 
                 <div class="d-flex justify-content-end pt-3">
                   <button type="button" class="btn btn-light btn-lg">Annuler</button>
-                  <button type="button" class="btn btn-warning btn-lg ms-2">Enregistrer</button>
+                  <button type="submit" name="enregistrer" class="btn btn-warning btn-lg ms-2">Enregistrer</button>
                 </div>
-
+                </form>
               </div>
             </div>
           </div>

@@ -1,9 +1,9 @@
 <?php
 namespace App\Model;
 class Etudiant extends User{
-private string $matricule;
-private string $sexe;
-private string $adresse;
+private string $matricule='';
+private string $sexe='';
+private string $adresse='';
 
     public function __construct()
     {
@@ -75,4 +75,13 @@ public static function findAll():array{
     $sql="select*from ".self::table()." where role  like '".self::$role."' "; 
      return [];
  }
+ public function insert():int{
+    $db=parent::database();
+    $db->connexionBD();
+    $sql="INSERT INTO personne (`nomc_omplet`,`role`,`login`,`password`,`matricule`,`adresse`,`sexe`) VALUES (?,?,?,?,?,?,?);";
+    $result=$db->executeUpdate($sql,[$this->nomComplet,self::$role,$this->login,$this->password,$this->matricule,$this->adresse,$this->sexe]);
+    $db->closeConnexio();
+
+    return $result;
+}
 }

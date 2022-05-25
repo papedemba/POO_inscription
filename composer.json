@@ -14,5 +14,7 @@
             "email": "ddemba232@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "digiaonline/instance-factory": "^1.1"
+    }
 }

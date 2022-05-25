@@ -3,8 +3,9 @@ namespace App\Core;
 
 use App\Exception\RouteNotFoundException;
 use App\Controller\SecurityController;
-use App\Controller\ClasseController;
-use App\Controller\ModuleController;
+use App\Core\Role;
+// use App\Controller\ClasseController;
+// use App\Controller\ModuleController;
 
 class Router{
     private Request $request;
@@ -24,6 +25,8 @@ class Router{
         if(isset($this->routes[$uri])){
             // die('okkk');
                 $route=$this->routes[$uri];
+
+                
                 // die('okkkk');
 
                 [$ctrClass,$action]=$route;
