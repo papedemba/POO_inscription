@@ -23,10 +23,11 @@ use App\Core\Constantes;
         <li class="nav-item">
             <a class="nav-link active disabled" href="">Personne</a>
         </li>
-        
+        <?php  if(isset($_SESSION['user'])): ?>
         <li class="nav-item">
-            <a class="nav-link " href="<?=$Constantes::WEB_ROOT.'login'?>">Deconnexion</a>
+            <a class="nav-link " href="<?=$Constantes::WEB_ROOT.'logout'?>">Deconnexion</a>
         </li>
+        <?php endif ?>
     </ul>
         </div>
         

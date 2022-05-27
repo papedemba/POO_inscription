@@ -44,7 +44,7 @@ public function insert():int{
    
     //return self::updateby($sql);
 }
-public  function update(int $id):int{
+public static  function delete(int $id):int{
         $db=self::database();
         $db->connexionBD();
         $sql="UPDATE ".self::table()." set etat='1' where id=? ";
@@ -52,6 +52,14 @@ public  function update(int $id):int{
         $db->closeConnexio();
         
         return $result;
+}
+public  function update(int $id):int{
+        $db=self::database();
+        $db->connexionBD();
+        $sql="UPDATE ".self::table()." set libelle=? ,niveau=? ,filiere=? where id=? ";
+        $result=$db->executeUpdate($sql,[$this->libelle,$this->niveau,$this->filiere,$this->id]);
+        $db->closeConnexio();
+        return 0;
 }
 
         /**

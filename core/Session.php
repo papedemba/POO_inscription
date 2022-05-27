@@ -20,4 +20,9 @@ class Session{
     public function getUser(){
         return $this->user;
      }
+     public static function unssetSession():void{
+
+        unset($_SESSION);
+        
+     }
 }

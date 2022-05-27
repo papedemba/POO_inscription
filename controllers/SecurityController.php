@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Core\Controller;
+use App\Core\Session;
 use App\Model\User;
 
 class SecurityController extends Controller{
@@ -34,7 +35,9 @@ class SecurityController extends Controller{
         //2-traitement apres soumission => POST
     }
     public function deconnexion(){
+        session_destroy();
 
+        Session::unssetSession();
         $this->redirecToRoute("login");
         
     }

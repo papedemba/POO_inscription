@@ -28,9 +28,51 @@ class ClasseController extends Controller{
     public function deleteClasse(){
         if($this->request->isPost()){  
             // die($_POST["id"]); 
+            extract($_POST);
             $class=new Classe;
-            $class->update($_POST["id"]);
+            $class->delete($id);
             $this->render('classe/listerClasse.html.php');
         }
+        
+    }
+    public function modifierClasse(){
+        if($this->request->isGet()){
+
+            }
+
+
+        if($this->request->isPost()){  
+
+            // dd($_POST);
+            extract($_POST);
+
+            if(isset($modifier)){
+                $classe=Classe::findById($id);
+                // dd($classe);
+                $this->render('classe/creerClasse.html.php',$data=[
+                    "classe"=>$classe[0]
+                ]);
+            }else{
+                $classe = new Classe();
+                $classe->setId($id);
+                $classe->setLibelle($libelle);
+                $classe->setNiveau($niveau);
+                $classe->setFiliere($filiere);
+                $classe->update($id);
+                $this->redirecToRoute('classes');
+            }
+           
+            // $classe = new Classe();
+            // $classe->setId($id);
+            // $classe=Classe::findById($id);
+            // $classe->setLibelle($libelle);
+            // $classe->setNiveau($niveau);
+            // $classe->setFiliere($filiere);
+        
+        
+
+
+        }
+        
     }
 }

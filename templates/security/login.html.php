@@ -19,10 +19,10 @@ use App\Core\Constantes;
 
 	<body>
 
-		<div class="wrapper" style="background-image: url('<?=$Contantes::WEB_ROOT?>template/login/images/bg-registration-form-1.jpg');">
+		<div class="wrapper" style="background-image: url('<?=$Contantes::WEB_ROOT?>template/login/images/pp.jpg');">
 			<div class="inner">
 				<div class="image-holder">
-					<img src="<?=$Contantes::WEB_ROOT?>template/login/images/pro.jpg" alt="">
+					<img src="<?=$Contantes::WEB_ROOT?>template/login/images/book.jpeg" alt="">
 				</div>
 				<form method="post" action="<?=$Constantes::WEB_ROOT."login"?>" >
 					<h3>CONNEXION</h3>

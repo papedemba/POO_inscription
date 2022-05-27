@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ajouter une classe</title>
+    <title>Modifier une classe</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="<?=$Contantes::WEB_ROOT?>template/classe/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -17,12 +17,13 @@
     <div class="main">
 
         <div class="container">
-            <form method="POST" class="appointment-form" id="appointment-form">
+            <form method="POST" action="<?=$Constantes::WEB_ROOT."classes"?>" class="appointment-form" id="appointment-form">
                 <h2>Creer une nouvelle classe</h2>
                 <div class="form-group-1">
                     <input type="text" name="libelle" id="libelle" placeholder="libelle de la classe" required />
                     <input type="text" name="niveau" id="niveau" placeholder="niveau" required />
-                    <input type="text" name="filiere" id="filiere" placeholder="filiere" required />
+                    <input type="text" name="filiere" id="filiere" placeholder="filiere
+                    " required />
                 </div>
                 <div class="form-submit">
                     <input type="submit" name="submit" id="submit" class="submit" value="Request an appointment" />

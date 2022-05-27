@@ -21,6 +21,9 @@ class ProfesseurController extends Controller{
             $this->render('professeur/listerProfesseur.html.php',$professeurs);
         }
 
+    } public function deleteProfesseur(){
+        
+
     }
 
 }

@@ -32,7 +32,7 @@ class Router{
                 [$ctrClass,$action]=$route;
 
                 // die('okkk');
-            //    dd($action);
+               // dd($action);
 
                 // [$ctrClass]=$route[0]; 
                 // [$action]=$route[1];

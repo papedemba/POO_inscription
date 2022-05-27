@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Table 03</title>
+  	<title>Professeur</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,7 +25,7 @@
 					<h4 class="text-center mb-4">LISTE DES PROFESSEUR</h4>
 					<div class="table-wrap">
 						<table class="table">
-					    <thead class="thead-primary">
+					    <thead class="thead-dark">
 					      <tr>
 					        <th>NOM COMPLET</th>
 					        <th>GRADE</th>
@@ -39,7 +39,9 @@
 					        <th scope="row" class="scope" ><?=$professeur->nomc_omplet?></th>
 					        <td> <?=$professeur->grade?></td>
 					        <td><button type="button" class="btn btn-success">Modifier</button>
-                				<button type="button" class="btn btn-danger">Supprimer</button> </td>
+							<button type="button" class="btn btn-secondary">Supprimer</button>
+                			<button type="button" class="btn btn-dark">Details</button>
+							 </td>
 							
 					      </tr>
 					      
@@ -55,10 +57,10 @@
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script src="<?=$Constantes::WEB_ROOT?>template/professeur/js/jquery.min.js"></script>
+  <script src="<?=$Constantes::WEB_ROOT?>template/professeur/js/popper.js"></script>
+  <script src="<?=$Constantes::WEB_ROOT?>template/professeur/js/bootstrap.min.js"></script>
+  <script src="<?=$Constantes::WEB_ROOT?>template/professeur/js/main.js"></script>
 
 	</body>
 </html>

@@ -25,16 +25,16 @@ $classes = Classe::findAll();
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-4 text-center mb-2">
+				<div class="col-md-4 text-center mb-5">
 					<h2 class="heading-section">ODC</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-center mb-4">LISTE DES CLASSES</h4>
+					<h4 class="text-center mb-7">LISTE DES CLASSES</h4>
 					<div class="table-wrap">
 						<table class="table">
-					    <thead class="thead-primary">
+					    <thead class="thead-dark">
 					      <tr>
 					        <th>LIBELLE</th>
 					        <th>FILIERE</th>
@@ -49,10 +49,16 @@ $classes = Classe::findAll();
 					        <th scope="row" class="scope" ><?=$classe->libelle?></th>
 					        <td> <?=$classe->filiere?></td>
                             <td> <?=$classe->niveau?></td>
-					        <td><button type="button" class="btn btn-success">Modifier</button>
-							    <form class="btn btn-danger" action="/delete-classe" method="post">
+					        <td>
+								<div class="btn btn-success">
+									<form action="/modifier-classe" method="post">
 									<input type="hidden" name="id" value="<?=$classe->id?>">
-                					<button type="submit" class="btn btn-danger">Supprimer</button> </td>
+									<button type="submit" name="modifier" class="btn btn-success">Modifier</button>
+									</form>
+								</div>
+							    <form class="btn btn-secondary" action="/delete-classe" method="post">
+									<input type="hidden" name="id" value="<?=$classe->id?>">
+                					<button type="submit" class="btn btn-secondary">Supprimer</button> </td>
 								</form>
 							
 					      </tr>

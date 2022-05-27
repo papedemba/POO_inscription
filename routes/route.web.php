@@ -14,6 +14,7 @@ $router=new Router();
 $router->route('/login',[SecurityController::class,"authentification"]);
 $router->route('/logout',[SecurityController::class,"deconnexion"]);
 $router->route('/classes',[ClasseController::class,"listerClasse"]);
+$router->route('/modifier-classe',[ClasseController::class,"modifierClasse"]);
 $router->route('/add-classe',[ClasseController::class,"creerClasse"]);
 $router->route('/personne',[PersonneController::class,"lister"]);
 $router->route('/lister-professeur',[ProfesseurController::class,"listerProfesseur"]);

@@ -17,7 +17,7 @@
     Professeur
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="">Ajouter Professeur</a></li>
+    <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'add-prof'?>">Ajouter Professeur</a></li>
     <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'lister-professeur'?>">Lister Professeur</a></li>
   
   </ul>
@@ -28,7 +28,8 @@
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'add-classe'?>">Ajouter </a></li>
-    <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'classes'?>">lister Clsse</a></li>
+    <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'classes'?>">lister Classe</a></li>
+    <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT.'modifier-classe'?>">modifier</a></li>
   </ul>
 </div>
 <div class="btn-group">

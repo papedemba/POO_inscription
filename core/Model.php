@@ -43,10 +43,10 @@
         $db->closeConnexio();
         return $result;
     }
-    public static function findById(int $id):object|null{
+    public static function findById(int $id):object|null|array{
         $db=self::database();
         $db->connexionBD();
-        $sql="select*from '.self::table().' where id=?";
+        $sql="select*from ".self::table()." where id=?";
         $result=$db->executeSelect($sql,[$id]);
         $db->closeConnexio();
         return $result;
